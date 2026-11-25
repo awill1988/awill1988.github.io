@@ -1,0 +1,8 @@
+title: Adam Williams
+markdown: kramdown
+exclude:
+  - README.md
+  - scripts
+  - Gemfile
+  - Gemfile.lock
+  - vendor

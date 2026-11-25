@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ page.intro | default: page.description | escape }}">
+  <title>{{ site.title | escape }} · {{ page.title | escape }}</title>
+  <link rel="stylesheet" href="{{ '/assets/resume.css' | relative_url }}">
+</head>
+<body>
+  {{ content }}
+</body>
+</html>
