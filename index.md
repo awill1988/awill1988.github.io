@@ -29,7 +29,7 @@ Maintained the shared services that handle sign-in and product access across onX
 - Built onX Fish access controls so [one Midwest subscription](https://www.onxmaps.com/blog/onx-officially-introduces-onx-fish) covered Minnesota, Wisconsin and Michigan.
 - Worked with Growth on directing users to the appropriate sign-in provider. Automated permission changes when employee accounts were opened, suspended or restored.
 
-#### Backend Software Development Engineer, Backcountry <span class="dates">Apr 2021 – Mar 2023</span>
+#### Senior Software Engineer I, Backcountry <span class="dates">Apr 2021 – Mar 2023</span>
 {: #onx-backcountry tabindex="-1"}
 
 Founding backend engineer for onX Backcountry.
