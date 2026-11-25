@@ -74,8 +74,23 @@ Worked with Product and IT to plan card-linked rebate programs and design the sy
 **Applications and data** · React, Vue, PostgreSQL and Snowflake.\
 **Infrastructure** · AWS, Google Cloud, Kubernetes, Terraform and OpenTofu.
 
-## Education and teaching
+## Open source
+
+Added local storage-emulator support to [gcsfs](https://github.com/fsspec/gcsfs/pull/424) and fixed how [Vue CLI](https://github.com/vuejs/vue-cli/pull/6277) generates web app manifests under Webpack 5. Other merged work spans [GDAL](https://github.com/OSGeo/gdal/pull/2965), [pg_tileserv](https://github.com/CrunchyData/pg_tileserv/pull/72), [Ory Hydra](https://github.com/ory/hydra/pull/3867), [Wazuh](https://github.com/wazuh/wazuh/pull/3729), [xdomls](https://github.com/oeo/xdomls/pull/1) and the [Awesome AI Plugins directory](https://github.com/hashgraph-online/awesome-ai-plugins/pull/683).
+
+Proposed patches for [Vuetify Loader](https://github.com/vuetifyjs/vuetify-loader/pull/166), [IElixir](https://github.com/pprzetacznik/IElixir/pull/60), [FlowPy](https://github.com/onXmaps/FlowPy/pull/1), [Ory Pop](https://github.com/ory/pop/pull/7), [redis-semaphore](https://github.com/swarthy/redis-semaphore/pull/16) and [k8s-auth-client](https://github.com/vimond/k8s-auth-client/pull/2). [Public bug reports and feature proposals](https://github.com/search?q=is%3Apublic+is%3Aissue+author%3Aawill1988+-user%3Aawill1988&type=issues) include [Serverless Framework](https://github.com/serverless/serverless/issues/7578).
+
+Built [Savior](https://github.com/yourmoodai/savior) for local prompt processing, [agent-stream.nvim](https://github.com/awill1988/agent-stream.nvim) for working with coding agents in Neovim, and Rust libraries for handling [optional values](https://github.com/awill1988/somelse) and [errors](https://github.com/awill1988/okerrr). [More projects](https://github.com/awill1988?tab=repositories).
+
+## Education and volunteer service
 
 **University of California, Irvine** · BA in Drama, minor in Information & Computer Science, 2015.
 
+**Bozeman Symphonic Choir** · Volunteer member, 2022–present.\
 **Code2College** · Volunteer tutoring instructor, 2022–2023.
+
+## Acting credits
+
+**Montana TheatreWorks** · *White Christmas* (ensemble, in rehearsal for December 2026), *The Music Man* (chorus, 2026) and *Cabaret* (Ernst Ludwig, 2025). **Shane Lalani Center for the Arts** · *RENT* (Benny, 2026).
+
+**California stage credits** · *Yerma* (Juan), *Hello, Dolly!* (Rudolph and ensemble), *Fiddler on the Roof* (Perchik), *Spring Awakening* (Adult Man), *Rent* (ensemble) and *Cabaret* (ensemble).
