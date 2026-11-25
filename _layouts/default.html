@@ -3,8 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ page.intro | default: page.description | escape }}">
-  <title>{{ site.title | escape }} · {{ page.title | escape }}</title>
+  {% capture title %}{{ site.title }} · {{ page.title }}{% endcapture %}
+  {% assign description = page.intro | default: page.description %}
+  <title>{{ title | escape }}</title>
+  <meta name="description" content="{{ description | escape }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title | escape }}">
+  <meta property="og:description" content="{{ description | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url | escape }}">
+  <meta property="og:image" content="{{ '/assets/adam-williams-share.png' | absolute_url | escape }}">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta property="og:image:alt" content="Adam Williams’s black signature on a white background">
   <link rel="stylesheet" href="{{ '/assets/resume.css' | relative_url }}">
 </head>
 <body>
