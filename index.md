@@ -9,7 +9,8 @@ intro: Full-stack engineer with more than ten years in financial and geospatial 
 ## Professional experience
 {: #experience tabindex="-1"}
 
-### Arro Finance
+### <img class="employer-logo" alt="" src="{{ '/assets/employers/arro.png' | relative_url }}"> Arro Finance
+{: #arro-finance}
 
 #### Staff Software Engineer <span class="dates">Jan 2026 – present</span>
 
@@ -20,7 +21,8 @@ intro: Full-stack engineer with more than ten years in financial and geospatial 
 - Added banking rules and test cases to Arro’s AI code-review tools so engineers could check proposed changes against how the ledger records transactions.
 - Led engineering’s SOC 2 Type II audit work with Compliance and Operations. The independent auditor issued an unqualified opinion with no exceptions noted.
 
-### onXmaps
+### <img class="employer-logo" alt="" src="{{ '/assets/employers/onx.png' | relative_url }}"> onXmaps
+{: #onxmaps}
 
 #### Senior Software Engineer I, Core Services <span class="dates">Apr 2023 – Dec 2025</span>
 
@@ -38,7 +40,7 @@ Founding backend engineer for onX Backcountry.
 - Built Backcountry’s hiking route pipeline on the engine shared with Offroad. Proposed hiker-specific routing data and expanded the build from Montana to all 50 states and DC. Hikers could [snap a route to hiking trails](https://www.onxmaps.com/backcountry/app/features/hike-planner) and see its distance and elevation change as they planned.
 - Worked with geospatial specialists on a map layer showing [four levels of avalanche terrain exposure](https://www.onxmaps.com/blog/onx-backcountry-launches-avalanche-terrain-exposure-scale) for trip planning. Set up a local map datastore where engineers could test data changes on their laptops.
 
-### Foundant Technologies
+### <img class="employer-logo" alt="" src="{{ '/assets/employers/foundant.webp' | relative_url }}"> Foundant Technologies
 {: #foundant-technologies tabindex="-1"}
 
 #### Senior Software Engineer <span class="dates">Oct 2020 – Apr 2021</span>
@@ -47,7 +49,7 @@ Founding backend engineer for onX Backcountry.
 - Used Webpack 5 Module Federation to give shared components their own release pipeline. An Accounting engineer could add a menu destination in one place for both Accounting and Foundant User.
 - Developed the deposit-posting workflow across the accounting interface and backend services, including the logic that reconciled deposits with their journal entries.
 
-### Payouts Network (formerly Wonder Technologies)
+### <img class="employer-logo" alt="" src="{{ '/assets/employers/payouts.svg' | relative_url }}"> Payouts Network (formerly Wonder Technologies)
 {: #payouts-network-formerly-wonder-technologies tabindex="-1"}
 
 #### Solutions Architect <span class="dates">Sep 2020 – Oct 2020</span>
@@ -59,7 +61,8 @@ Worked with Product and IT to plan card-linked rebate programs and design the sy
 - Took responsibility for the React application customers used to [claim an Instant Payout](https://payoutsnetwork.com/terms-and-conditions). Unified how card entry and confirmation handled a payment, and extended sign-in and shared components across the customer and administrative applications.
 - Co-designed the DevOps interview with the director of engineering as the team adopted containers and infrastructure as code. Helped hire and mentor engineers in Bozeman as an individual contributor, including during a CTO transition.
 
-### Composite Apps
+### <img class="employer-logo" alt="" src="{{ '/assets/employers/composite.svg' | relative_url }}"> Composite Apps
+{: #composite-apps}
 
 #### Full Stack Engineer <span class="dates">Feb 2016 – Sep 2017</span>
 
@@ -91,6 +94,7 @@ Worked with Product and IT to plan card-linked rebate programs and design the sy
 **Bozeman Symphonic Choir** · Volunteer member, 2022–present.\
 **Code2College** · Volunteer tutoring instructor, 2022–2023.
 
-## Acting credits
+## Acting credits <img class="emoji" alt="" src="{{ '/assets/emoji/theater.png' | relative_url }}">
+{: #acting-credits}
 
 **Montana TheatreWorks** · *White Christmas* (ensemble, in rehearsal for December 2026), *The Music Man* (chorus, 2026) and *Cabaret* (Ernst Ludwig, 2025). **Shane Lalani Center for the Arts** · [*RENT* (Benny, 2026)](https://www.theshanecenter.org/latest-news/meetthecastandcrewofrent-f6t9h).
