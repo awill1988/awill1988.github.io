@@ -1,0 +1,70 @@
+name: Résumé website
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: ruby/setup-ruby@78c62f2208e480ce3d5ae4dfd9b9e181acf48b63 # v1.344.0
+        with:
+          bundler-cache: true
+      - name: Generate the website and print the résumé
+        env:
+          CHROME_BIN: google-chrome
+          JEKYLL_ENV: production
+        run: bundle exec python3 scripts/build_resume.py
+      - name: Verify the published pages and PDF
+        run: |
+          test -s _site/index.html
+          test -s _site/assets/resume.css
+          test ! -e _site/work
+          grep -q 'Professional experience' _site/index.html
+          if ! command -v pdfinfo >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y poppler-utils
+          fi
+          pdfinfo _site/assets/Adam-Williams-Resume.pdf | grep -Eq '^Pages:[[:space:]]+2$'
+      - name: Scan dependencies, secrets and workflow configuration
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          version: v0.76.2
+          scan-type: fs
+          scan-ref: .
+          scanners: vuln,secret,misconfig
+          severity: HIGH,CRITICAL
+          skip-dirs: vendor/bundle
+          exit-code: '1'
+      - name: Upload the static site
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.publish.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: publish
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

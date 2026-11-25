@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<a class="skip" href="#experience">Skip to experience</a>
+<main class="resume">
+  <header>
+    <h1>{{ page.full_name }}</h1>
+    <p class="role">{{ page.title }}</p>
+    <div class="utility"><span>{{ page.location }}</span>
+      <nav aria-label="Résumé and contact">
+        <a class="screen-only" href="#experience">Experience</a>
+        <a href="https://github.com/awill1988"><span class="screen-only">GitHub</span><span class="print-only">github.com/awill1988</span></a>
+        <a href="https://www.linkedin.com/in/adam1988/"><span class="screen-only">LinkedIn</span><span class="print-only">linkedin.com/in/adam1988</span></a>
+        <a class="download" href="{{ '/assets/Adam-Williams-Resume.pdf' | relative_url }}" download>Download PDF</a>
+      </nav>
+    </div>
+    <p class="intro">{{ page.intro }}</p>
+  </header>
+  <article aria-label="Professional résumé">{{ content }}</article>
+</main>
