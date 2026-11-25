@@ -3,7 +3,7 @@ layout: resume
 full_name: Adam Williams
 title: Staff Software Engineer
 location: Bozeman, Montana
-intro: Full-stack engineer with more than ten years in financial and geospatial software. Built the SNOTEL service that brought mountain snowpack histories to onX Hunt, Backcountry and Offroad. Financial work spans credit-union payments, core banking and an AI assistant at Arro Finance.
+intro: Full-stack engineer with more than ten years in financial and geospatial software. I built the SNOTEL snowpack service for onX Hunt, Backcountry and Offroad. I also build for fellow engineers, from command-line sign-in at onX to tools for releasing AI prompts at Arro Finance.
 ---
 
 ## Professional experience
@@ -24,7 +24,7 @@ intro: Full-stack engineer with more than ten years in financial and geospatial 
 
 #### Senior Software Engineer I, Core Services <span class="dates">Apr 2023 – Dec 2025</span>
 
-Maintained the shared services that handle sign-in and product access across onX’s outdoor apps.
+Maintained sign-in and product access across onX’s apps. Built authx, a command-line tool modeled on gcloud’s OAuth sign-in flow. Dozens of onX engineers used it daily.
 
 - Built onX Fish access controls so [one Midwest subscription](https://www.onxmaps.com/blog/onx-officially-introduces-onx-fish) covered Minnesota, Wisconsin and Michigan.
 - Worked with Growth on directing users to the appropriate sign-in provider. Automated permission changes when employee accounts were opened, suspended or restored.
@@ -76,11 +76,13 @@ Worked with Product and IT to plan card-linked rebate programs and design the sy
 
 ## Open source
 
-Added local storage-emulator support to [gcsfs](https://github.com/fsspec/gcsfs/pull/424) and fixed how [Vue CLI](https://github.com/vuejs/vue-cli/pull/6277) generates web app manifests under Webpack 5. Other merged work spans [GDAL](https://github.com/OSGeo/gdal/pull/2965), [pg_tileserv](https://github.com/CrunchyData/pg_tileserv/pull/72), [Ory Hydra](https://github.com/ory/hydra/pull/3867), [Wazuh](https://github.com/wazuh/wazuh/pull/3729), [xdomls](https://github.com/oeo/xdomls/pull/1) and the [Awesome AI Plugins directory](https://github.com/hashgraph-online/awesome-ai-plugins/pull/683).
+- **2026 · Developer tools.** Built [Savior](https://github.com/yourmoodai/savior) for local prompt processing and [agent-stream.nvim](https://github.com/awill1988/agent-stream.nvim) so developers can review a coding agent’s edits inside Neovim. Published Rust libraries for [optional values](https://github.com/awill1988/somelse) and [errors](https://github.com/awill1988/okerrr).
+- **2021 · Local testing and web builds.** Added emulator support to [gcsfs](https://github.com/fsspec/gcsfs/pull/424) so developers could test against local storage. Fixed how [Vue CLI](https://github.com/vuejs/vue-cli/pull/6277) generates web app manifests under Webpack 5.
+- **2020 · Geospatial tooling.** Extended the Docker builds for [GDAL](https://github.com/OSGeo/gdal/pull/2965) and [pg_tileserv](https://github.com/CrunchyData/pg_tileserv/pull/72) so developers could build images for both ARM and x86.
 
-Proposed patches for [Vuetify Loader](https://github.com/vuetifyjs/vuetify-loader/pull/166), [IElixir](https://github.com/pprzetacznik/IElixir/pull/60), [FlowPy](https://github.com/onXmaps/FlowPy/pull/1), [Ory Pop](https://github.com/ory/pop/pull/7), [redis-semaphore](https://github.com/swarthy/redis-semaphore/pull/16) and [k8s-auth-client](https://github.com/vimond/k8s-auth-client/pull/2). [Public bug reports and feature proposals](https://github.com/search?q=is%3Apublic+is%3Aissue+author%3Aawill1988+-user%3Aawill1988&type=issues) include [Serverless Framework](https://github.com/serverless/serverless/issues/7578).
+**Other merged contributions** · [Awesome AI Plugins directory](https://github.com/hashgraph-online/awesome-ai-plugins/pull/683) (2026), [Ory Hydra](https://github.com/ory/hydra/pull/3867) (2024), [xdomls](https://github.com/oeo/xdomls/pull/1) (2020) and [Wazuh](https://github.com/wazuh/wazuh/pull/3729) (2019).
 
-Built [Savior](https://github.com/yourmoodai/savior) for local prompt processing, [agent-stream.nvim](https://github.com/awill1988/agent-stream.nvim) for working with coding agents in Neovim, and Rust libraries for handling [optional values](https://github.com/awill1988/somelse) and [errors](https://github.com/awill1988/okerrr). [More projects](https://github.com/awill1988?tab=repositories).
+**Proposed patches** · [Ory Pop](https://github.com/ory/pop/pull/7), [FlowPy](https://github.com/onXmaps/FlowPy/pull/1), [IElixir](https://github.com/pprzetacznik/IElixir/pull/60), [Vuetify Loader](https://github.com/vuetifyjs/vuetify-loader/pull/166), [redis-semaphore](https://github.com/swarthy/redis-semaphore/pull/16) and [k8s-auth-client](https://github.com/vimond/k8s-auth-client/pull/2). [Issue reports](https://github.com/search?q=is%3Apublic+is%3Aissue+author%3Aawill1988+-user%3Aawill1988&type=issues) include [Serverless Framework](https://github.com/serverless/serverless/issues/7578). [More projects](https://github.com/awill1988?tab=repositories).
 
 ## Education and volunteer service
 
