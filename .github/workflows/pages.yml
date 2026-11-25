@@ -34,7 +34,11 @@ jobs:
             sudo apt-get update -qq
             sudo apt-get install -y poppler-utils
           fi
-          pdfinfo _site/assets/Adam-Williams-Resume.pdf | grep -Eq '^Pages:[[:space:]]+2$'
+          pdfinfo -f 1 -l 2 _site/assets/Adam-Williams-Resume.pdf | awk '
+            /^Pages:/ { pages = $2 }
+            /^Page +[12] size:/ && $4 == 612 && $6 == 792 { letter_pages++ }
+            END { exit !(pages == 2 && letter_pages == 2) }
+          '
       - name: Scan dependencies, secrets and workflow configuration
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
