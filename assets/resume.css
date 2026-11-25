@@ -12,15 +12,15 @@
 }
 :root {
   color-scheme: light;
-  --paper: #faf9fc;
-  --canvas: #f1f0f4;
-  --wash: #e7e4f7;
-  --ink: #242432;
-  --muted: #555367;
-  --accent: #49418f;
-  --highlight: #933d22;
-  --button-text: #fff;
-  --line: #c8c5d6;
+  --paper: #fffdfa;
+  --canvas: #eeefec;
+  --apricot: #fae4d1;
+  --cyan: #d8eff0;
+  --ink: #242e30;
+  --muted: #4e6062;
+  --accent: #1b616a;
+  --highlight: #93451e;
+  --line: #c4d1ce;
   background-color: var(--paper);
   color: var(--ink);
   font: 105%/1.55 "DM Sans", system-ui, sans-serif;
@@ -31,14 +31,14 @@ main { margin-inline: auto; }
 .utility, nav { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 .utility { justify-content: space-between; border-bottom: 1px solid var(--ink); padding-bottom: 1.2rem; font-size: .86rem; }
 a { color: var(--accent); text-underline-offset: .2em; }
-.download { padding: .42rem .85rem; background: var(--accent); color: var(--button-text); text-decoration: none; border-radius: .18rem; }
+.download { padding: .42rem .85rem; background: var(--cyan); color: var(--accent); text-decoration: none; border-radius: .18rem; }
 a:focus-visible { outline: 3px solid var(--highlight); outline-offset: 4px; }
 .skip { position: absolute; left: 0; top: 0; transform: translateY(-130%); background: var(--paper); padding: .4rem; }
 .skip:focus { transform: translateY(0); }
 h1, h3, .intro { font-family: Spectral, Georgia, serif; font-weight: 400; }
 h1 { font-size: clamp(3rem, 7.8vw, 5.5rem); line-height: 1.06; letter-spacing: -.05em; margin: 2.1rem 0 .4rem; }
 .role, .dates, h2 { font-family: "IBM Plex Mono", ui-monospace, monospace; }
-.role { color: var(--accent); margin: 0; font-size: 1.2rem; font-weight: 500; }
+.role { color: var(--highlight); margin: 0; font-size: 1.2rem; font-weight: 500; }
 .intro { max-width: 46rem; font-size: clamp(1.25rem, 2.6vw, 1.55rem); line-height: 1.45; margin: 1.15rem 0 2rem; }
 h2 { border-top: 2px solid var(--accent); padding-top: .8rem; color: var(--accent); margin: 2.3rem 0 1.15rem; font-size: .84rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
 h3 { border-top: 1px solid var(--line); padding-top: 1.15rem; margin: 1.7rem 0 .1rem; font-size: 1.95rem; line-height: 1.25; }
@@ -59,38 +59,44 @@ li::marker { color: var(--accent); }
 @media screen and (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --paper: #181b26;
-    --canvas: #14161e;
-    --wash: #302c49;
-    --ink: #f1eef8;
-    --muted: #bcb9cd;
-    --accent: #c2b7ff;
-    --highlight: #ffb58d;
-    --button-text: #191827;
-    --line: #505168;
+    --paper: #192123;
+    --canvas: #101718;
+    --apricot: #3d3029;
+    --cyan: #253e41;
+    --ink: #eef3ef;
+    --muted: #b6c5c6;
+    --accent: #a0dbdf;
+    --highlight: #f3b88f;
+    --line: #415356;
   }
 }
 @media screen {
-  :root { background-color: var(--canvas); }
-  body { padding: 1rem; }
+  :root {
+    background-color: var(--canvas);
+    --bottom-gutter: max(4rem, calc(env(safe-area-inset-bottom, 0px) + 2rem), calc(100lvh - 100dvh + 1rem));
+    scroll-padding-bottom: var(--bottom-gutter);
+  }
+  body { padding: 1rem; padding-bottom: var(--bottom-gutter); }
   main {
     width: 100%;
     max-width: 8.5in;
     padding: clamp(1.4rem, 6vw, .6in);
     border: 1px solid color-mix(in srgb, var(--ink) 12%, var(--paper));
     background-color: var(--paper);
-    background-image: radial-gradient(ellipse 90% 100% at top left, var(--wash), transparent);
+    background-image:
+      radial-gradient(ellipse 80% 100% at top left, var(--apricot), transparent),
+      radial-gradient(ellipse 75% 90% at top right, var(--cyan), transparent);
     background-size: 100% 22rem;
     background-repeat: no-repeat;
   }
   article > :last-child { margin-bottom: 0; }
   h2 { border-image: linear-gradient(90deg, var(--accent), var(--line) 70%, transparent) 1; }
   a:not(.download):is(:hover, :focus-visible) { color: var(--highlight); text-decoration-thickness: .13em; }
-  .download:is(:hover, :focus-visible) { background: var(--highlight); }
+  .download:is(:hover, :focus-visible) { background: var(--apricot); color: var(--highlight); }
 }
 @media screen and (max-width: 36rem) {
-  body { padding: 0; }
-  main { border: 0; padding: 1.15rem; }
+  body { padding-inline: 0; padding-top: 0; }
+  main { border-width: 0 0 1px; padding: 1.15rem; }
   .utility { align-items: flex-start; gap: .65rem; }
   nav { gap: .8rem; }
   h1 { margin-top: 1.8rem; }
