@@ -92,5 +92,3 @@ Built [Savior](https://github.com/yourmoodai/savior) for local prompt processing
 ## Acting credits
 
 **Montana TheatreWorks** · *White Christmas* (ensemble, in rehearsal for December 2026), *The Music Man* (chorus, 2026) and *Cabaret* (Ernst Ludwig, 2025). **Shane Lalani Center for the Arts** · *RENT* (Benny, 2026).
-
-**California stage credits** · *Yerma* (Juan), *Hello, Dolly!* (Rudolph and ensemble), *Fiddler on the Roof* (Perchik), *Spring Awakening* (Adult Man), *Rent* (ensemble) and *Cabaret* (ensemble).
