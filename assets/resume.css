@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("fonts/plex-mono/IBMPlexMono-Regular-Latin1.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("fonts/plex-mono/IBMPlexMono-Medium-Latin1.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
 :root {
   color-scheme: light;
   --paper: #faf9fc;
@@ -25,9 +37,10 @@ a:focus-visible { outline: 3px solid var(--highlight); outline-offset: 4px; }
 .skip:focus { transform: translateY(0); }
 h1, h3, .intro { font-family: Spectral, Georgia, serif; font-weight: 400; }
 h1 { font-size: clamp(3rem, 7.8vw, 5.5rem); line-height: 1.06; letter-spacing: -.05em; margin: 2.1rem 0 .4rem; }
-.role { color: var(--accent); margin: 0; font-size: 1.2rem; font-weight: 650; }
+.role, .dates, h2 { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+.role { color: var(--accent); margin: 0; font-size: 1.2rem; font-weight: 500; }
 .intro { max-width: 46rem; font-size: clamp(1.25rem, 2.6vw, 1.55rem); line-height: 1.45; margin: 1.15rem 0 2rem; }
-h2 { border-top: 2px solid var(--accent); padding-top: .8rem; color: var(--accent); margin: 2.3rem 0 1.15rem; font-size: .84rem; letter-spacing: .12em; text-transform: uppercase; }
+h2 { border-top: 2px solid var(--accent); padding-top: .8rem; color: var(--accent); margin: 2.3rem 0 1.15rem; font-size: .84rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
 h3 { border-top: 1px solid var(--line); padding-top: 1.15rem; margin: 1.7rem 0 .1rem; font-size: 1.95rem; line-height: 1.25; }
 h2 + h3 { border: 0; padding: 0; margin-top: 0; }
 article p, ul { max-width: 48rem; }
