@@ -3,7 +3,7 @@ layout: resume
 full_name: Adam Williams
 title: Staff Software Engineer
 location: Bozeman, Montana
-intro: I build banking services at Arro Finance and tools that help engineers trace payment failures and release AI prompts. Over the past decade I’ve worked on credit-union payments, mountain maps and identity systems.
+intro: I’m a staff software engineer focused on security, compliance, and site reliability. At Arro Finance, I led engineering’s SOC 2 Type II audit work and built the monitoring systems I use to investigate payment failures. My background spans financial software, identity systems, and geospatial services.
 ---
 
 ## Professional experience
@@ -14,11 +14,12 @@ intro: I build banking services at Arro Finance and tools that help engineers tr
 
 #### Staff Software Engineer <span class="dates">Jan 2026 – present</span>
 
-- Built credit-line, statement and ledger services. Automated balance checks for the banking team.
-- Led engineering’s SOC 2 Type II audit work with Compliance and Operations. The independent auditor issued an unqualified opinion with no exceptions noted.
-- Built and ran a self-hosted Grafana stack to trace stalled payments. Implemented the engineering director’s design for delivering banking data changes to Snowflake.
+- Led engineering’s SOC 2 Type II audit work. Closed gaps in change controls and documented production approvals. The independent auditor issued an unqualified opinion with no exceptions noted.
+- Replaced Datadog with a self-hosted Grafana and OpenTelemetry stack on AWS. Built alerts for stalled payment workflows and for failures in monitoring itself. Automated recovery when storage failed to attach.
+- Mapped AWS permissions to Google Workspace groups and secured internal tools with AWS Verified Access. Coordinated penetration-test fixes. The vendor verified closure of all high-severity findings on retest.
+- Built credit-line, statement and ledger services. Automated balance checks to flag discrepancies. Implemented the engineering director’s design to deliver banking data changes to Snowflake.
 - Rebuilt Arro’s AI assistant in Rust on Amazon Bedrock. Engineers could release new prompts independently of the service and inspect the tool calls and evaluation scores behind a response.
-- Proposed sharing the web signup for [Arro Credit Builder](https://www.arrofinance.com/creditbuilder) with the mobile app. The team could update one form for both platforms, and customers could skip steps they had already completed.
+- Proposed one [Arro Credit Builder](https://www.arrofinance.com/creditbuilder) signup for web and mobile so customers could skip completed steps.
 - Added ledger rules and test cases to Arro’s AI code-review tools.
 
 ### <img class="employer-logo" alt="" src="{{ '/assets/employers/onx.png' | relative_url }}"> onXmaps
