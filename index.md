@@ -3,7 +3,7 @@ layout: resume
 full_name: Adam Williams
 title: Staff Software Engineer
 location: Bozeman, Montana
-intro: Full-stack engineer with more than ten years in financial and geospatial software. I built the SNOTEL snowpack service for onX Hunt, Backcountry and Offroad. I also build for fellow engineers, from command-line sign-in at onX to tools for releasing AI prompts at Arro Finance.
+intro: I build banking services at Arro Finance and tools that help engineers trace payment failures and release AI prompts. Over the past decade I’ve worked on credit-union payments, mountain maps and identity systems.
 ---
 
 ## Professional experience
@@ -14,30 +14,28 @@ intro: Full-stack engineer with more than ten years in financial and geospatial 
 
 #### Staff Software Engineer <span class="dates">Jan 2026 – present</span>
 
-- Built services for credit lines, statements and ledger posting. Automated account balance checks so the banking team could investigate discrepancies.
+- Built credit-line, statement and ledger services. Automated balance checks for the banking team.
+- Led engineering’s SOC 2 Type II audit work with Compliance and Operations. The independent auditor issued an unqualified opinion with no exceptions noted.
+- Built and ran a self-hosted Grafana stack to trace stalled payments. Implemented the engineering director’s design for delivering banking data changes to Snowflake.
 - Rebuilt Arro’s AI assistant in Rust on Amazon Bedrock. Engineers could release new prompts independently of the service and inspect the tool calls and evaluation scores behind a response.
 - Proposed sharing the web signup for [Arro Credit Builder](https://www.arrofinance.com/creditbuilder) with the mobile app. The team could update one form for both platforms, and customers could skip steps they had already completed.
-- Built and operated Arro’s Grafana monitoring stack. Implemented the engineering director’s design for capturing banking data changes in AWS and delivering them to Snowflake.
-- Added banking rules and test cases to Arro’s AI code-review tools so engineers could check proposed changes against how the ledger records transactions.
-- Led engineering’s SOC 2 Type II audit work with Compliance and Operations. The independent auditor issued an unqualified opinion with no exceptions noted.
+- Added ledger rules and test cases to Arro’s AI code-review tools.
 
 ### <img class="employer-logo" alt="" src="{{ '/assets/employers/onx.png' | relative_url }}"> onXmaps
 {: #onxmaps}
 
-#### Senior Software Engineer I, Core Services <span class="dates">Apr 2023 – Dec 2025</span>
+#### Senior Software Engineer I, Core Services (Identity) <span class="dates">May 2023 – Dec 2025</span>
 
-Maintained sign-in and product access across onX’s apps. Built authx, a command-line tool modeled on gcloud’s OAuth sign-in flow. Dozens of onX engineers used it daily.
+Built authx, an OAuth command-line tool that dozens of onX engineers used daily to sign in from their terminals.
 
 - Built onX Fish access controls so [one Midwest subscription](https://www.onxmaps.com/blog/onx-officially-introduces-onx-fish) covered Minnesota, Wisconsin and Michigan.
 - Worked with Growth on directing users to the appropriate sign-in provider. Automated permission changes when employee accounts were opened, suspended or restored.
 
-#### Senior Software Engineer I, Backcountry <span class="dates">Apr 2021 – Mar 2023</span>
+#### Senior Software Engineer I, Backcountry <span class="dates">Apr 2021 – Apr 2023</span>
 {: #onx-backcountry tabindex="-1"}
 
-Founding backend engineer for onX Backcountry.
-
-- Designed and built the SNOTEL pipeline and API for onX Hunt, Backcountry and [Offroad](https://www.onxmaps.com/offroad/app/features/snow-mode). In Backcountry, skiers could tap any of more than 800 mountain stations to see its [snowpack history](https://www.onxmaps.com/backcountry/app/features/snotel-map).
-- Built Backcountry’s hiking route pipeline on the engine shared with Offroad. Proposed hiker-specific routing data and expanded the build from Montana to all 50 states and DC. Hikers could [snap a route to hiking trails](https://www.onxmaps.com/backcountry/app/features/hike-planner) and see its distance and elevation change as they planned.
+- As Backcountry’s founding backend engineer, built the SNOTEL pipeline and API that let skiers tap a map pin for [snowpack history](https://www.onxmaps.com/backcountry/app/features/snotel-map) at more than 800 mountain stations. The same service supplied snow observations to Hunt and [Offroad](https://www.onxmaps.com/offroad/app/features/snow-mode).
+- Represented Backcountry on [snap-to-trail routing](https://www.onxmaps.com/backcountry/app/features/hike-planner) with the Geospatial Datastore and Routing & Navigation teams. Proposed a separate trail network for hikers, added its import query to Offroute and expanded the scheduled build from Montana to all 50 states and DC.
 - Worked with geospatial specialists on a map layer showing [four levels of avalanche terrain exposure](https://www.onxmaps.com/blog/onx-backcountry-launches-avalanche-terrain-exposure-scale) for trip planning. Set up a local map datastore where engineers could test data changes on their laptops.
 
 ### <img class="employer-logo" alt="" src="{{ '/assets/employers/foundant.webp' | relative_url }}"> Foundant Technologies
@@ -45,30 +43,31 @@ Founding backend engineer for onX Backcountry.
 
 #### Senior Software Engineer <span class="dates">Oct 2020 – Apr 2021</span>
 
-- Built a common Webpack toolchain for four Vue applications. Added progressive web app support to one package and rolled it out to all four through a dependency update.
-- Used Webpack 5 Module Federation to give shared components their own release pipeline. An Accounting engineer could add a menu destination in one place for both Accounting and Foundant User.
-- Developed the deposit-posting workflow across the accounting interface and backend services, including the logic that reconciled deposits with their journal entries.
+- Built a common Webpack toolchain for four Vue applications. All four could adopt progressive web app support by updating one dependency.
+- Extended a teammate’s Module Federation prototype to give shared components their own release pipeline. An Accounting engineer then added a menu destination in one place for both Accounting and Foundant User.
+- Built deposit posting across the accounting app and backend, reconciling deposits with their journal entries.
 
 ### <img class="employer-logo" alt="" src="{{ '/assets/employers/payouts.svg' | relative_url }}"> Payouts Network (formerly Wonder Technologies)
 {: #payouts-network-formerly-wonder-technologies tabindex="-1"}
 
 #### Solutions Architect <span class="dates">Sep 2020 – Oct 2020</span>
-#### Senior Software Engineer / Senior Lead Software Engineer <span class="dates">Sep 2017 – Sep 2020</span>
+#### Senior Lead Software Engineer <span class="dates">Mar 2019 – Sep 2020</span>
+#### Senior Software Engineer <span class="dates">Sep 2017 – Mar 2019</span>
 
-Worked with Product and IT to plan card-linked rebate programs and design the systems needed to run them.
+Owned credit-union rebate processing and worked with the director of engineering on the FIS integration.
 
-- Designed and deployed the AWS platform that enabled credit unions to offer rebates on card purchases. Worked with the chief security officer on cloud access and network controls for PCI DSS.
-- Took responsibility for the React application customers used to [claim an Instant Payout](https://payoutsnetwork.com/terms-and-conditions). Unified how card entry and confirmation handled a payment, and extended sign-in and shared components across the customer and administrative applications.
-- Co-designed the DevOps interview with the director of engineering as the team adopted containers and infrastructure as code. Helped hire and mentor engineers in Bozeman as an individual contributor, including during a CTO transition.
+- Moved API traffic from EC2 to Kubernetes as the team adopted serverless infrastructure for rebates. Worked with the chief security officer on cloud access and network controls for PCI DSS.
+- Moved card entry and confirmation into a shared Redux store in the React app customers used to [claim an Instant Payout](https://payoutsnetwork.com/terms-and-conditions). The engineer who built the card screen then extended it to accept additional card brands.
+- Co-designed a hands-on DevOps interview with the director of engineering. Helped hire and mentor engineers in Bozeman during a CTO transition while maintaining the payments platform.
 
 ### <img class="employer-logo" alt="" src="{{ '/assets/employers/composite.svg' | relative_url }}"> Composite Apps
 {: #composite-apps}
 
-#### Full Stack Engineer <span class="dates">Feb 2016 – Sep 2017</span>
+#### Software Developer <span class="dates">Feb 2016 – Sep 2017</span>
 
 - Built [earthquake alerts](https://kinemetrics.com/news/kinemetrics-provides-business-continuity-solution-for-dubai-municipality/) and evacuation reporting for Kinemetrics. The company reported deploying the system in four Dubai buildings. Presented it to municipal leaders and trained police officers to use it.
-- Rebuilt the server and database for an employee evacuation app. Responders could scan badges on company-issued phones during drills and emergencies. Server-sent events showed them who had been accounted for in real time.
-- Built APIs from emailed reports for Warner Bros. Studio Tours. A teammate extended coverage to Burbank and Leavesden.
+- Rebuilt a separate evacuation app’s server and database. Server-sent events showed responders live check-ins as they scanned employee badges.
+- Turned emailed studio reports into APIs for Warner Bros. A teammate extended them to Burbank and Leavesden.
 - Standardized server setup and database migrations for studio reporting and two other client projects.
 
 ## Technical skills
@@ -81,7 +80,7 @@ Worked with Product and IT to plan card-linked rebate programs and design the sy
 
 - **2026 · Developer tools.** Built [Savior](https://github.com/yourmoodai/savior) for local prompt processing and [agent-stream.nvim](https://github.com/awill1988/agent-stream.nvim) so developers can review a coding agent’s edits inside Neovim. Published Rust libraries for [optional values](https://github.com/awill1988/somelse) and [errors](https://github.com/awill1988/okerrr).
 - **2021 · Local testing and web builds.** Added emulator support to [gcsfs](https://github.com/fsspec/gcsfs/pull/424) so developers could test against local storage. Fixed how [Vue CLI](https://github.com/vuejs/vue-cli/pull/6277) generates web app manifests under Webpack 5.
-- **2020 · Geospatial tooling.** Extended the Docker builds for [GDAL](https://github.com/OSGeo/gdal/pull/2965) and [pg_tileserv](https://github.com/CrunchyData/pg_tileserv/pull/72) so developers could build images for both ARM and x86.
+- **2020 · Geospatial tooling.** Extended [GDAL](https://github.com/OSGeo/gdal/pull/2965) and [pg_tileserv](https://github.com/CrunchyData/pg_tileserv/pull/72) Docker builds to produce ARM and x86 images.
 
 **Other merged contributions** · [Awesome AI Plugins directory](https://github.com/hashgraph-online/awesome-ai-plugins/pull/683) (2026), [Ory Hydra](https://github.com/ory/hydra/pull/3867) (2024), [xdomls](https://github.com/oeo/xdomls/pull/1) (2020) and [Wazuh](https://github.com/wazuh/wazuh/pull/3729) (2019).
 
