@@ -126,23 +126,25 @@ article ul { padding-inline-start: 1.15em; }
   .masthead__links { margin-top: .7rem; }
 }
 @media screen and (max-width: 36rem) {
-  .work__row { grid-template-columns: 1fr; gap: .2rem; padding: .9rem 0; }
+  .work { margin-top: 1.5rem; }
+  .work__row { grid-template-columns: 1fr; gap: .2rem; padding: .65rem 0; }
+  .work__row p { line-height: 1.4; }
   article h4 { align-items: flex-start; flex-direction: column; }
 }
 
 @page { size: letter; margin: .6in; }
 @media print {
-  :root { background: white; font: 10.5pt/1.27 "Source Sans 3", sans-serif; }
+  :root { background: white; font: 10.5pt/1.22 "Source Sans 3", sans-serif; }
   .resume { --canvas: white; --ink: #202929; color: var(--ink); print-color-adjust: exact; }
   .skip, .screen-only, #experience { display: none; }
   .print-only { display: inline; }
-  .masthead { padding-bottom: 6pt; margin-bottom: 8pt; border-bottom: .5pt solid var(--rule); }
+  .masthead { padding-bottom: 6pt; margin-bottom: 5pt; border-bottom: .5pt solid var(--rule); }
   .masthead h1 { font-size: 19pt; line-height: 1.1; letter-spacing: -.025em; }
   .masthead__bio { margin: 2pt 0; }
   .masthead__links { font-size: 9pt; color: var(--muted); }
   a { color: inherit; }
   article h2 { font-size: 12pt; margin: 9pt 0 3pt; }
-  article h3 { font-size: 14pt; margin: 8pt 0 2pt; }
+  article h3 { font-size: 14pt; margin: 6pt 0 2pt; }
   article h4 { font-size: 10.5pt; margin: 2pt 0; }
   h2, h3, h4 { break-after: avoid; }
   article p, article ul { margin: 3pt 0; }

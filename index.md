@@ -7,8 +7,8 @@ intro: I’m a staff software engineer focused on security, compliance, and site
 highlights:
   - employer: Arro Finance
     target: arro-finance
-    title: Monitoring credit payments at Arro
-    detail: I replaced Datadog with a self-hosted monitoring stack. Engineers could see payment-provider health and get alerts when workflows stalled or monitoring went silent.
+    title: Leading engineering through a SOC 2 Type II audit
+    detail: I designed a way for employees to use their existing Google Workspace sign-in to reach internal tools. AWS Verified Access checked and logged each access request. I managed the system in Terraform. The independent auditor issued an unqualified opinion and noted no exceptions.
   - employer: onX Backcountry
     target: onx-backcountry
     title: Putting mountain snowpack history on the map
@@ -27,9 +27,10 @@ highlights:
 
 #### Staff Software Engineer <span class="dates">Jan 2026 – present</span>
 
-- Led engineering’s SOC 2 Type II audit work. Added peer approval for infrastructure changes, tracked fixes in Vanta and checked its AWS coverage. The independent auditor issued an unqualified opinion with no exceptions noted.
+- Led engineering’s SOC 2 Type II audit work. Added peer approval for infrastructure changes, tracked remediation in Vanta and verified its AWS coverage. The auditor issued an unqualified opinion with no exceptions noted.
+- Designed the employee SSO path from Google Workspace through AWS IAM Identity Center to Verified Access. Internal tools could share one access policy and audit trail. Managed the gateways, policies and CloudWatch logging in Terraform.
+- Coordinated penetration-test fixes with engineering and refined mobile protections with Customer Support. The independent tester verified that all high-severity findings had been resolved.
 - Replaced Datadog with self-hosted Grafana and OpenTelemetry on AWS. Engineers could check payment-provider health and get alerts when workflows stalled or monitoring went silent.
-- Secured internal tools with AWS Verified Access and mapped AWS permissions to Google Workspace groups. Coordinated penetration-test fixes with engineering and refined mobile protections with Customer Support. The independent tester verified that all high-severity findings had been resolved.
 - Built credit-line, statement and ledger services. Automated balance checks across three systems. Implemented the engineering director’s design to deliver banking changes to Snowflake.
 - Rebuilt Arro’s AI assistant in Rust on Amazon Bedrock. Engineers could release a prompt change without redeploying the service and inspect which tools the assistant used to answer a customer.
 - Proposed reusing the [Arro Credit Builder](https://www.arrofinance.com/creditbuilder) web signup in the mobile app. Built the handoff with the team so one flow could skip steps an applicant had completed.
