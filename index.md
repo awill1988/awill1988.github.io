@@ -15,8 +15,8 @@ highlights:
     detail: I built the service that let Backcountry skiers look up snowpack history at more than 800 stations. It also supplied snow observations to Hunt and Offroad.
   - employer: onX Identity
     target: onx-identity
-    title: Giving onX engineers a terminal sign-in
-    detail: I built an OAuth command-line tool that dozens of engineers used daily to sign in from their terminals.
+    title: Turning memberships into map access
+    detail: I built the multi-region authorization system that let onX Fish subscribers use one membership across Minnesota, Wisconsin and Michigan.
 ---
 
 ## Professional experience
@@ -40,10 +40,13 @@ highlights:
 #### Senior Software Engineer I, Core Services (Identity) <span class="dates">May 2023 – Dec 2025</span>
 {: #onx-identity tabindex="-1"}
 
-Built the access controls that let onX Fish subscribers use [one Midwest membership](https://www.onxmaps.com/blog/onx-officially-introduces-onx-fish) across Minnesota, Wisconsin and Michigan.
+Built the Rust services that resolved permissions at token exchange, giving [onX Fish Midwest](https://www.onxmaps.com/blog/onx-officially-introduces-onx-fish) subscribers map access across three states.
 
-- Worked with Growth on directing users to the appropriate sign-in provider. Automated permission changes when employee accounts were opened, suspended or restored.
-- Built authx, an OAuth command-line tool that dozens of onX engineers used daily to sign in from their terminals.
+- Added CockroachDB follower reads. Our team tuned data placement and consistency so permission checks were as fast in the western region as in the primary. Across regions, p99 was about 5 ms.
+- Indexed sessions by expiration and automated cleanup of aging OAuth and session records to keep the identity database below 90% capacity.
+- Wrote the local setup guide and on-call runbook for tracing permission checks and monitoring service health.
+- Built authx so engineers could sign in and inspect permissions from a terminal. Dozens used it daily. Teammates added shell integration and npm distribution.
+- Helped Growth route sign-ins. Automated access for new, suspended and restored employee accounts.
 
 #### Senior Software Engineer I, Backcountry <span class="dates">Apr 2021 – Apr 2023</span>
 {: #onx-backcountry tabindex="-1"}
