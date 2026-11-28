@@ -6,8 +6,16 @@ I’m a staff software engineer in Bozeman, Montana. At Arro Finance, I build ba
 
 ## Local preview
 
-Install the Ruby version in `.ruby-version` and run `bundle install`. Run `bundle exec python3 scripts/build_resume.py` to generate the static HTML and its two-page PDF, then `bundle exec jekyll serve` to preview the site. The print script uses Chrome or Chromium. Set `CHROME_BIN` if the executable is outside the usual locations.
+Install the Ruby version in `.ruby-version`, run `bundle install` and start Docker. Build the site and both downloads from the homepage with `bundle exec python3 scripts/build_resume.py`. Serve the resulting directory with `python3 -m http.server 4000 --bind 127.0.0.1 --directory _site`.
+
+Add `--proofs` to the build command to compare Editorial and Engineering at `/proofs/`. Each proof includes the full résumé, desktop and phone captures, and both PDFs. Set `resume_typography` in `_config.yml` to select the homepage design. Browser printing and **Download PDF** use that design. **Plain PDF** uses black text in a single font family. Fonts and their licenses are in `assets/fonts/`.
+
+## Visual checks
+
+Run `bundle exec python3 scripts/build_resume.py --check` to compare the selected design with the PNG files in `visual-baselines/`. The same pinned Linux ARM64 Chromium and PDF rasterizer run locally and in CI. A mismatch saves expected, actual and difference images in `visual-results/diffs/`. After reviewing an intentional layout or copy change, run `bundle exec python3 scripts/build_resume.py --update-baselines` and review the changed images before committing.
+
+Screen checks capture the top, onX, Payouts and bottom at phone, tablet and desktop sizes in both color schemes. They also exercise keyboard focus, downloads, and wrapping around the mobile breakpoint. Print checks verify each page’s Letter dimensions and margins, embedded fonts, selectable text in homepage order, external links and page break.
 
 ## Publishing
 
-Pull requests build the site, check the PDF and run Trivy. After a merge to `main`, GitHub Actions repeats those checks on the merged commit and deploys the resulting static files to GitHub Pages. Both browser printing and the PDF download use the homepage résumé and its print stylesheet.
+Pull requests build the site, verify the screen and PDF layouts and run Trivy. A merge to `main` repeats those checks and deploys the verified site to GitHub Pages. Proofs and visual testing files stay local.
