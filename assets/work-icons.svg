@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="shield" viewBox="0 0 24 24">
+    <path d="M12 3 20 6v5c0 5-3 8-8 11-5-3-8-6-8-11V6z"/>
+    <path d="m8.5 12 2.5 2.5 4.5-5"/>
+  </symbol>
+  <symbol id="mountain" viewBox="0 0 24 24">
+    <path d="m2 20 10-16 10 16z M8 10.4l3 2 2.5-2 3 1"/>
+  </symbol>
+  <symbol id="key" viewBox="0 0 24 24">
+    <path d="M14 3a6 6 0 0 0-5.6 8.2L2 17.6V21h4v-2.5h2.5V16H11l1.2-1.2A6 6 0 1 0 14 3z"/>
+    <circle cx="16" cy="7" r="1"/>
+  </symbol>
+  <symbol id="github" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38v-1.49c-2.23.48-2.7-.95-2.7-.95-.36-.92-.89-1.16-.89-1.16-.73-.5.05-.49.05-.49.8.06 1.22.82 1.22.82.72 1.22 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82a7.7 7.7 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></symbol>
+  <symbol id="linkedin" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M1.2 0h13.6A1.2 1.2 0 0 1 16 1.2v13.6a1.2 1.2 0 0 1-1.2 1.2H1.2A1.2 1.2 0 0 1 0 14.8V1.2A1.2 1.2 0 0 1 1.2 0ZM2.4 6h2.3v7.5H2.4zm1.15-3.6a1.35 1.35 0 1 0 0 2.7 1.35 1.35 0 0 0 0-2.7ZM6.2 6h2.2v1.05C8.8 6.35 9.55 5.8 10.8 5.8c2.4 0 2.85 1.5 2.85 3.45v4.25h-2.3V9.7c0-.9-.02-1.95-1.22-1.95-1.23 0-1.62.95-1.62 1.9v3.85H6.2z"/></symbol>
+  <symbol id="download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></symbol>
+  <symbol id="plain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2h9l5 5v15H5z M14 2v6h5 M8 12h8 M8 16h6"/></symbol>
+</svg>

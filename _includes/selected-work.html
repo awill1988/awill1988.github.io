@@ -1,0 +1,16 @@
+<section class="work screen-only" aria-labelledby="selected-work">
+    <h2 id="selected-work">Selected work</h2>
+    <ul class="work__list">
+      {% for item in page.highlights %}
+      <li>
+        <a class="work__link" href="#{{ item.target | escape }}">
+          <svg class="work__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <use href="{{ '/assets/work-icons.svg' | relative_url }}#{{ item.icon | escape }}"></use>
+          </svg>
+          <span class="work__team">{{ item.team | escape }}</span>
+          <span class="work__title">{{ item.title | escape }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>

@@ -1,0 +1,16 @@
+<a class="masthead__action" href="{{ site.profiles.github | escape }}" aria-label="GitHub profile" title="GitHub profile">
+  <svg aria-hidden="true" focusable="false"><use href="{{ '/assets/work-icons.svg' | relative_url }}#github"></use></svg>
+  <span class="print-only">github.com/awill1988</span>
+</a>
+<a class="masthead__action" href="{{ site.profiles.linkedin | escape }}" aria-label="LinkedIn profile" title="LinkedIn profile">
+  <svg aria-hidden="true" focusable="false"><use href="{{ '/assets/work-icons.svg' | relative_url }}#linkedin"></use></svg>
+  <span class="print-only">linkedin.com/in/adam1988</span>
+</a>
+<a class="masthead__action screen-only" href="{{ '/assets/Adam-Williams-Resume.pdf' | relative_url }}" aria-label="Download styled résumé PDF" title="Download styled résumé PDF" download>
+  <svg aria-hidden="true" focusable="false"><use href="{{ '/assets/work-icons.svg' | relative_url }}#download"></use></svg>
+</a>
+{% unless include.compact %}
+<a class="masthead__action screen-only" href="{{ '/assets/Adam-Williams-Resume-Plain.pdf' | relative_url }}" aria-label="Download plain résumé PDF" title="Download plain résumé PDF" download>
+  <svg aria-hidden="true" focusable="false"><use href="{{ '/assets/work-icons.svg' | relative_url }}#plain"></use></svg>
+</a>
+{% endunless %}
