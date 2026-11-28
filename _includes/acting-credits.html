@@ -1,0 +1,14 @@
+<dl class="credits">
+{% for group in site.data.acting_credits %}
+  <div class="credits__group">
+    <dt class="credits__company">{{ group.company | escape }}</dt>
+    <dd class="credits__productions">
+      <ul>
+        {% for show in group.productions %}
+        <li><a href="{{ show.url | escape }}"><em>{{ show.title | escape }}</em></a> · {{ show.role | escape }} · {% if show.status %}{{ show.status | escape }} {% endif %}{{ show.year }}</li>
+        {% endfor %}
+      </ul>
+    </dd>
+  </div>
+{% endfor %}
+</dl>

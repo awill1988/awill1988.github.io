@@ -5,12 +5,12 @@ layout: default
 <main class="resume resume--{{ site.resume_typography }}">
   <header class="masthead">
     <h1>{{ page.full_name }}</h1>
-    <p class="masthead__bio">{{ page.title | downcase | capitalize }} in {{ page.location }}.</p>
+    <p class="masthead__bio">{{ page.intro | escape }}</p>
     <nav class="masthead__links" aria-label="Résumé and contact">
       <span class="masthead__group">
         <a class="screen-only" href="#experience">Experience</a>
-        <a href="https://github.com/awill1988"><span class="screen-only">GitHub</span><span class="print-only">github.com/awill1988</span></a>
-        <a href="https://www.linkedin.com/in/adam1988/"><span class="screen-only">LinkedIn</span><span class="print-only">linkedin.com/in/adam1988</span></a>
+        <a href="{{ site.profiles.github | escape }}"><span class="screen-only">GitHub</span><span class="print-only">github.com/awill1988</span></a>
+        <a href="{{ site.profiles.linkedin | escape }}"><span class="screen-only">LinkedIn</span><span class="print-only">linkedin.com/in/adam1988</span></a>
       </span>
       <span class="masthead__group screen-only">
         <a class="screen-only" href="{{ '/assets/Adam-Williams-Resume.pdf' | relative_url }}" download>Download PDF</a>
