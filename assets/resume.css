@@ -117,14 +117,14 @@ li::marker { color: var(--accent); }
   .resume .intro { font: inherit; margin: 4pt 0; max-width: none; }
   .resume h2 { margin: 7pt 0 4pt; padding-top: 4pt; font-size: 9pt; }
   .resume article > h2:not(:first-child) { margin: 11pt 0 5pt; }
-  .resume h3 { margin: 6pt 0 2pt; padding-top: 3pt; font: 15pt/1.12 Georgia, serif; }
+  .resume h3 { margin: 4pt 0 2pt; padding-top: 3pt; font: 15pt/1.12 Georgia, serif; }
   .resume h2 + h3 { margin-top: 0; padding-top: 0; }
-  .resume h4 { flex-direction: row; margin: 2pt 0; font-size: 10.5pt; }
+  .resume h4 { flex-direction: row; margin: 2pt 0; font-size: 10.5pt; line-height: 1.25; }
   .resume article > p { margin-block: 3pt; }
   .resume h4 + p { margin: 3pt 0 4pt; }
   #payouts-network-formerly-wonder-technologies { break-before: page; border: 0; margin: 0; padding: 0; }
   h2, h3, h4 { break-after: avoid; }
-  li { break-inside: avoid; margin: 1pt 0; }
+  li { break-inside: avoid; margin: .5pt 0; }
   article p, ul { max-width: none; }
-  ul { margin: 3pt 0 4pt; }
+  ul { margin: 2pt 0 3pt; }
 }

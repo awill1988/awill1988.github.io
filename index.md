@@ -3,7 +3,7 @@ layout: resume
 full_name: Adam Williams
 title: Staff Software Engineer
 location: Bozeman, Montana
-intro: I’m a staff software engineer focused on security, compliance, and site reliability. At Arro Finance, I build banking services and operate the infrastructure behind them. My earlier work spans identity systems, credit-union payments, and mountain mapping.
+intro: I’m a staff software engineer focused on security, compliance, and site reliability. At Arro Finance, I build banking services and operate the infrastructure behind them. At onX, I helped run the identity systems that gave subscribers access to the maps they paid for, across a platform used by millions of adventurers.
 ---
 
 ## Professional experience
@@ -16,9 +16,9 @@ intro: I’m a staff software engineer focused on security, compliance, and site
 
 - Led engineering’s SOC 2 Type II audit work. Added peer approval for infrastructure changes, tracked fixes in Vanta and checked its AWS coverage. The independent auditor issued an unqualified opinion with no exceptions noted.
 - Replaced Datadog with self-hosted Grafana and OpenTelemetry on AWS. Engineers could check payment-provider health and get alerts when workflows stalled or monitoring went silent.
-- Secured internal tools with AWS Verified Access and mapped AWS permissions to Google Workspace groups. Coordinated penetration-test fixes. The vendor closed all high-severity findings on retest.
+- Secured internal tools with AWS Verified Access and mapped AWS permissions to Google Workspace groups. Coordinated penetration-test fixes with engineering and refined mobile protections with Customer Support. The independent tester verified that all high-severity findings had been resolved.
 - Built credit-line, statement and ledger services. Automated balance checks across three systems. Implemented the engineering director’s design to deliver banking changes to Snowflake.
-- Rebuilt Arro’s AI assistant in Rust on Amazon Bedrock. Engineers could update prompts without redeploying the service and inspect the tool calls behind a response. Added ledger rules and tests to AI code review.
+- Rebuilt Arro’s AI assistant in Rust on Amazon Bedrock. Engineers could release a prompt change without redeploying the service and inspect which tools the assistant used to answer a customer.
 - Proposed reusing the [Arro Credit Builder](https://www.arrofinance.com/creditbuilder) web signup in the mobile app. Built the handoff with the team so one flow could skip steps an applicant had completed.
 
 ### <img class="employer-logo" alt="" src="{{ '/assets/employers/onx.png' | relative_url }}"> onXmaps
@@ -26,10 +26,10 @@ intro: I’m a staff software engineer focused on security, compliance, and site
 
 #### Senior Software Engineer I, Core Services (Identity) <span class="dates">May 2023 – Dec 2025</span>
 
-Built authx, an OAuth command-line tool that dozens of onX engineers used daily to sign in from their terminals.
+Built the access controls that let onX Fish subscribers use [one Midwest membership](https://www.onxmaps.com/blog/onx-officially-introduces-onx-fish) across Minnesota, Wisconsin and Michigan.
 
-- Built onX Fish access controls so [one Midwest subscription](https://www.onxmaps.com/blog/onx-officially-introduces-onx-fish) covered Minnesota, Wisconsin and Michigan.
 - Worked with Growth on directing users to the appropriate sign-in provider. Automated permission changes when employee accounts were opened, suspended or restored.
+- Built authx, an OAuth command-line tool that dozens of onX engineers used daily to sign in from their terminals.
 
 #### Senior Software Engineer I, Backcountry <span class="dates">Apr 2021 – Apr 2023</span>
 {: #onx-backcountry tabindex="-1"}
@@ -54,11 +54,13 @@ Built authx, an OAuth command-line tool that dozens of onX engineers used daily 
 #### Senior Lead Software Engineer <span class="dates">Mar 2019 – Sep 2020</span>
 #### Senior Software Engineer <span class="dates">Sep 2017 – Mar 2019</span>
 
-Owned credit-union rebate processing and worked with the director of engineering on the FIS integration.
+I designed the AWS platform that credit unions used to issue card rebates and wrote the processor that submitted those credits to Mastercard.
 
-- Moved API traffic from EC2 to Kubernetes as the team adopted serverless infrastructure for rebates. Worked with the chief security officer on cloud access and network controls for PCI DSS.
-- Moved card entry and confirmation into a shared Redux store in the React app customers used to [claim an Instant Payout](https://payoutsnetwork.com/terms-and-conditions). The engineer who built the card screen then extended it to accept additional card brands.
-- Co-designed a hands-on DevOps interview with the director of engineering. Helped hire and mentor engineers in Bozeman during a CTO transition while maintaining the payments platform.
+- Moved scheduled clearing and rebate jobs for Mastercard and American Express to AWS Fargate. Continued developing the Mastercard processor after the migration, refactoring it and adding regression tests.
+- Worked with a fellow engineer on the [FIS integration](https://payoutsnetwork.com/industries/banking), a priority for the business. Built configurable single sign-on for partners and implemented the United Airlines integration.
+- Fixed a race condition in concurrent jobs by using database transactions.
+- Moved production API traffic from EC2 to Kubernetes and worked with the chief security officer on cloud access and network controls for PCI DSS.
+- During a CTO transition, helped hire and mentor engineers in Bozeman. Co-designed a hands-on DevOps interview that asked candidates to work with CloudFormation and Terraform.
 
 ### <img class="employer-logo" alt="" src="{{ '/assets/employers/composite.svg' | relative_url }}"> Composite Apps
 {: #composite-apps}
