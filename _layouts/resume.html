@@ -2,20 +2,35 @@
 layout: default
 ---
 <a class="skip" href="#experience">Skip to experience</a>
-<main class="resume resume--glass resume--{{ site.resume_typography }}">
-  <header>
+<main class="resume resume--{{ site.resume_typography }}">
+  <header class="masthead">
     <h1>{{ page.full_name }}</h1>
-    <p class="role">{{ page.title }}</p>
-    <div class="utility"><span><img class="emoji" alt="" src="{{ '/assets/emoji/location.png' | relative_url }}"> {{ page.location }}</span>
-      <nav aria-label="Résumé and contact">
+    <p class="masthead__bio">{{ page.title | downcase | capitalize }} in {{ page.location }}.</p>
+    <nav class="masthead__links" aria-label="Résumé and contact">
+      <span class="masthead__group">
         <a class="screen-only" href="#experience">Experience</a>
         <a href="https://github.com/awill1988"><span class="screen-only">GitHub</span><span class="print-only">github.com/awill1988</span></a>
         <a href="https://www.linkedin.com/in/adam1988/"><span class="screen-only">LinkedIn</span><span class="print-only">linkedin.com/in/adam1988</span></a>
-        <a class="download" href="{{ '/assets/Adam-Williams-Resume.pdf' | relative_url }}" download>Download PDF</a>
+      </span>
+      <span class="masthead__group screen-only">
+        <a class="screen-only" href="{{ '/assets/Adam-Williams-Resume.pdf' | relative_url }}" download>Download PDF</a>
         <a class="screen-only" href="{{ '/assets/Adam-Williams-Resume-Plain.pdf' | relative_url }}" download>Plain PDF</a>
-      </nav>
-    </div>
-    <p class="intro">{{ page.intro }}</p>
+      </span>
+    </nav>
   </header>
+  <section class="work screen-only" aria-labelledby="selected-work">
+    <h2 id="selected-work">Selected work</h2>
+    <ul class="work__list">
+      {% for item in page.highlights %}
+      <li class="work__row">
+        <span class="work__employer">{{ item.employer | escape }}</span>
+        <div>
+          <h3><a href="#{{ item.target }}">{{ item.title | escape }}</a></h3>
+          <p>{{ item.detail | escape }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
   <article aria-label="Professional résumé">{{ content }}</article>
 </main>
