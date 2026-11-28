@@ -143,7 +143,7 @@ article ul { padding-inline-start: 1.15em; }
   article li + li { margin-top: .45rem; }
   article li::marker { color: var(--muted); }
   article [id] { scroll-margin-top: 1.25rem; }
-  .resume-section:last-child { padding-bottom: 0; }
+  article > .resume-section:last-child { padding-bottom: 0; }
 }
 @media screen and (prefers-color-scheme: dark) {
   :root { --amber-light: #875145; --cyan-light: #286476; }
@@ -183,11 +183,11 @@ article ul { padding-inline-start: 1.15em; }
   .masthead__bio { margin: 2pt 0; }
   .masthead__links { font-size: 9pt; color: var(--muted); }
   a { color: inherit; }
-  article h2 { font-size: 12pt; margin: 9pt 0 3pt; }
+  article h2 { font-size: 12pt; margin: 6pt 0 2pt; }
   article h3 { font-size: 14pt; margin: 6pt 0 2pt; }
   article h4 { font-size: 10.5pt; margin: 2pt 0; }
   h2, h3, h4 { break-after: avoid; }
-  article p, article ul { margin: 3pt 0; }
+  article p, article ul { margin: 2.5pt 0; }
   article li { break-inside: avoid; margin: 1pt 0; }
   #payouts-network-formerly-wonder-technologies { break-before: page; margin-top: 0; }
   .resume--plain { --ink: black; --muted: black; --heading: "Source Sans 3", sans-serif; --weight: 600; }
@@ -380,4 +380,40 @@ article ul { padding-inline-start: 1.15em; }
 @keyframes edge-glint {
   0%, 100% { opacity: 0; }
   20% { opacity: .4; }
+}
+
+@media screen {
+  a.credit-link {
+    display: inline-block;
+    max-width: 100%;
+    padding: .02em .48em;
+    border: 1px solid var(--rule);
+    border-radius: .85em;
+    background-color: color-mix(in srgb, var(--cool) 5%, var(--canvas));
+    font-size: .95em;
+    line-height: 1.35;
+    text-decoration: none;
+  }
+  a.credit-link:is(:hover, :focus-visible) { border-color: var(--cool); text-decoration: underline; }
+  .credit-link[class*="credit-link--"]::before {
+    content: "";
+    display: inline-block;
+    width: .95em;
+    height: .95em;
+    margin-inline-end: .3em;
+    vertical-align: -.1em;
+    background: var(--project-mark) center / contain no-repeat;
+  }
+  .credit-link--uci { --project-mark: url("projects/uci.png"); }
+  .credit-link--saddleback { --project-mark: url("projects/saddleback.png"); }
+  .credit-link--savior { --project-mark: url("projects/savior.png"); }
+  .credit-link--vue-cli { --project-mark: url("projects/vue-cli.png"); }
+  .credit-link--gdal { --project-mark: url("projects/gdal.png"); }
+  .credit-link--ory { --project-mark: url("projects/ory.png"); }
+  .credit-link--wazuh { --project-mark: url("projects/wazuh.png"); }
+  .credit-link--vuetify { --project-mark: url("projects/vuetify.png"); }
+}
+
+@media screen and (max-width: 23rem) {
+  [data-ready] .masthead__compact-location { font-size: .70rem; }
 }

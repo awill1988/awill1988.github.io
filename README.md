@@ -1,4 +1,4 @@
-# Adam Williams
+# Adam T. Williams
 
 I’m a staff software engineer in Bozeman, Montana. At Arro Finance, I build banking services and run the monitoring platform engineers use to investigate payment failures. I led engineering’s work on Arro’s SOC 2 Type II audit. At onX Backcountry, I built the service that lets skiers check mountain snowpack history on the map.
 
