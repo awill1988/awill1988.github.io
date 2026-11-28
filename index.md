@@ -3,7 +3,7 @@ layout: resume
 full_name: Adam Williams
 title: Staff Software Engineer
 location: Bozeman, Montana
-intro: I’m a staff software engineer focused on security, compliance, and site reliability. At Arro Finance, I led engineering’s SOC 2 Type II audit work and built the monitoring systems I use to investigate payment failures. My background spans financial software, identity systems, and geospatial services.
+intro: I’m a staff software engineer focused on security, compliance, and site reliability. At Arro Finance, I build banking services and operate the infrastructure behind them. My earlier work spans identity systems, credit-union payments, and mountain mapping.
 ---
 
 ## Professional experience
@@ -14,13 +14,12 @@ intro: I’m a staff software engineer focused on security, compliance, and site
 
 #### Staff Software Engineer <span class="dates">Jan 2026 – present</span>
 
-- Led engineering’s SOC 2 Type II audit work. Closed gaps in change controls and documented production approvals. The independent auditor issued an unqualified opinion with no exceptions noted.
-- Replaced Datadog with a self-hosted Grafana and OpenTelemetry stack on AWS. Built alerts for stalled payment workflows and for failures in monitoring itself. Automated recovery when storage failed to attach.
-- Mapped AWS permissions to Google Workspace groups and secured internal tools with AWS Verified Access. Coordinated penetration-test fixes. The vendor verified closure of all high-severity findings on retest.
-- Built credit-line, statement and ledger services. Automated balance checks to flag discrepancies. Implemented the engineering director’s design to deliver banking data changes to Snowflake.
-- Rebuilt Arro’s AI assistant in Rust on Amazon Bedrock. Engineers could release new prompts independently of the service and inspect the tool calls and evaluation scores behind a response.
-- Proposed one [Arro Credit Builder](https://www.arrofinance.com/creditbuilder) signup for web and mobile so customers could skip completed steps.
-- Added ledger rules and test cases to Arro’s AI code-review tools.
+- Led engineering’s SOC 2 Type II audit work. Added peer approval for infrastructure changes, tracked fixes in Vanta and checked its AWS coverage. The independent auditor issued an unqualified opinion with no exceptions noted.
+- Replaced Datadog with self-hosted Grafana and OpenTelemetry on AWS. Engineers could check payment-provider health and get alerts when workflows stalled or monitoring went silent.
+- Secured internal tools with AWS Verified Access and mapped AWS permissions to Google Workspace groups. Coordinated penetration-test fixes. The vendor closed all high-severity findings on retest.
+- Built credit-line, statement and ledger services. Automated balance checks across three systems. Implemented the engineering director’s design to deliver banking changes to Snowflake.
+- Rebuilt Arro’s AI assistant in Rust on Amazon Bedrock. Engineers could update prompts without redeploying the service and inspect the tool calls behind a response. Added ledger rules and tests to AI code review.
+- Proposed reusing the [Arro Credit Builder](https://www.arrofinance.com/creditbuilder) web signup in the mobile app. Built the handoff with the team so one flow could skip steps an applicant had completed.
 
 ### <img class="employer-logo" alt="" src="{{ '/assets/employers/onx.png' | relative_url }}"> onXmaps
 {: #onxmaps}
