@@ -61,7 +61,8 @@ function measure() {
   slot.style.setProperty('--viewport-width', document.documentElement.clientWidth + 'px');
   main.style.setProperty('--open-height', content.offsetHeight + 'px');
   const rootSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-  const compactScale = 1.1 * rootSize / parseFloat(getComputedStyle(name).fontSize);
+  const nameRatio = Number(getComputedStyle(slot).getPropertyValue('--compact-name-ratio'));
+  const compactScale = nameRatio * rootSize / parseFloat(getComputedStyle(name).fontSize);
   slot.style.setProperty('--compact-scale', compactScale);
   slot.style.setProperty('--compact-name-width', name.querySelector('a').offsetWidth * compactScale + 'px');
   slot.dataset.ready = '';
@@ -69,6 +70,7 @@ function measure() {
 }
 
 new ResizeObserver(measure).observe(content);
+document.fonts.ready.then(measure);
 addEventListener('resize', measure);
 addEventListener('scroll', schedule, {passive: true});
 reduced.addEventListener('change', schedule);

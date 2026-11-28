@@ -126,13 +126,19 @@ def measure(page):
 
 
 def screen_checks(page, images):
-    for width in (320, 368, 369, 390, 575, 576, 577, 640, 641, 928):
+    for width in (320, 368, 369, 390, 575, 576, 577, 640, 641, 752, 927, 928, 1280, 1440, 1920):
         page.set_viewport_size({"width": width, "height": 844})
         ready(page)
         measure(page)
         page.locator("#onx-identity").evaluate("e => e.scrollIntoView()")
         ready(page)
-        name = page.locator("h1 a").bounding_box()
+        title_link = page.locator("h1 a")
+        assert title_link.evaluate("a => a.getClientRects().length === 1"), f"{width}: name wraps"
+        name = title_link.bounding_box()
+        bar = page.locator(".masthead").bounding_box()
+        assert bar["y"] <= name["y"] and name["y"] + name["height"] <= bar["y"] + bar["height"]
+        if width >= 928:
+            assert bar["height"] >= 64, f"{width}: desktop bar too shallow"
         place = page.locator(".masthead__compact-location").bounding_box()
         assert place["x"] >= name["x"] + name["width"], f"{width}: location overlaps name"
         assert name["y"] <= place["y"] + place["height"] / 2 <= name["y"] + name["height"]
