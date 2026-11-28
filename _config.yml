@@ -1,3 +1,4 @@
+resume_typography: engineering
 title: Adam Williams
 url: https://adam.williams.engineer
 markdown: kramdown
@@ -7,3 +8,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - visual-baselines
+  - visual-results

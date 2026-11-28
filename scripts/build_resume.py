@@ -1,44 +1,32 @@
-"""Build the Pages site and print its HTML to the downloadable résumé."""
+"""Build the Jekyll site and render its downloads with the CI browser."""
 
-import functools
+import argparse
 import os
 from pathlib import Path
-import shutil
 import subprocess
-import tempfile
-import threading
-from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
 ROOT = Path(__file__).resolve().parents[1]
-SITE = ROOT / "_site"
-PDF = Path("assets/Adam-Williams-Resume.pdf")
+PLATFORM = "linux/arm64"
 
 
 def main():
-    chrome = (
-        os.environ.get("CHROME_BIN")
-        or shutil.which("google-chrome")
-        or shutil.which("chromium")
-        or "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-    )
-    subprocess.run(["jekyll", "build"], cwd=ROOT, check=True)
-    handler = functools.partial(SimpleHTTPRequestHandler, directory=SITE)
-    with ThreadingHTTPServer(("127.0.0.1", 0), handler) as server:
-        threading.Thread(target=server.serve_forever, daemon=True).start()
-        try:
-            # Jekyll ignores this hidden browser profile during live previews.
-            with tempfile.TemporaryDirectory(prefix=".resume-", dir=ROOT / "assets") as tmp:
-                output = Path(tmp) / PDF.name
-                subprocess.run([
-                    chrome, "--headless", "--disable-background-networking",
-                    "--user-data-dir=" + tmp + "/profile", "--no-pdf-header-footer",
-                    "--print-to-pdf=" + str(output),
-                    f"http://127.0.0.1:{server.server_port}/",
-                ], check=True)
-                output.replace(ROOT / PDF)
-        finally:
-            server.shutdown()
-    shutil.copy2(ROOT / PDF, SITE / PDF)
+    parser = argparse.ArgumentParser(description=__doc__)
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--check", action="store_true", help="compare the selected design with visual-baselines/")
+    mode.add_argument("--update-baselines", action="store_true", help="replace baselines with this render")
+    parser.add_argument("--proofs", action="store_true", help="include the local typography comparison")
+    args = parser.parse_args()
+    subprocess.run(["bundle", "exec", "jekyll", "build"], cwd=ROOT, check=True)
+    subprocess.run(["docker", "build", "--platform", PLATFORM, "-t", "resume-renderer",
+                    "scripts/renderer"], cwd=ROOT, check=True)
+    flags = [flag for flag, enabled in (
+        ("--check", args.check), ("--update-baselines", args.update_baselines), ("--proofs", args.proofs)
+    ) if enabled]
+    subprocess.run([
+        "docker", "run", "--rm", "--platform", PLATFORM, "--network", "none",
+        "--shm-size", "256m", "--user", f"{os.getuid()}:{os.getgid()}",
+        "-e", "HOME=/tmp", "-v", f"{ROOT}:/work", "-w", "/work", "resume-renderer", *flags
+    ], check=True)
 
 
 if __name__ == "__main__":
