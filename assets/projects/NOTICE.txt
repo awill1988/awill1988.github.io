@@ -7,5 +7,5 @@ GDAL       https://gdal.org/en/stable/_static/gdalicon.png
 Ory        https://www.ory.sh/docs/img/favico.png
 Wazuh      https://documentation.wazuh.com/current/_static/images/favicon.ico
 Vuetify    https://vuetifyjs.com/favicon.ico
-UC Irvine  https://catalogue.uci.edu/favicon.ico
-Saddleback College  https://www.saddleback.edu/themes/custom/saddleback_theme/assets/favicon/favicon.png
+UC Irvine  https://bpb-us-w2.wpmucdn.com/wp.communications.uci.edu/dist/1/6/files/2023/05/favicon.ico (UC Irvine News)
+Saddleback College  Mountain symbol from https://www.saddleback.edu/sites/default/files/site-wrapper/logo/saddleback_color_logo_light_back_stacked_2.svg

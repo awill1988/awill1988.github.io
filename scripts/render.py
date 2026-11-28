@@ -126,7 +126,7 @@ def measure(page):
 
 
 def screen_checks(page, images):
-    for width in (320, 575, 576, 577, 640, 641, 928):
+    for width in (320, 368, 369, 390, 575, 576, 577, 640, 641, 928):
         page.set_viewport_size({"width": width, "height": 844})
         ready(page)
         measure(page)
@@ -140,7 +140,10 @@ def screen_checks(page, images):
         linkedin = compact.get_by_role("link", name="LinkedIn profile").bounding_box()
         assert linkedin["x"] >= place["x"] + place["width"], f"{width}: location overlaps LinkedIn"
         if width <= 640:
-            assert compact.get_by_role("link").count() == 1
+            github = compact.get_by_role("link", name="GitHub profile").bounding_box()
+            assert github["x"] >= place["x"] + place["width"], f"{width}: location overlaps GitHub"
+            assert compact.get_by_role("link").count() == 2
+            assert github["width"] >= 44 and linkedin["width"] >= 44
             assert page.locator(".masthead__domain").is_hidden()
         else:
             for label in ("GitHub profile", "Download styled résumé PDF"):

@@ -16,7 +16,7 @@ layout: default
           {% include masthead-links.html %}
         </nav>
       </div>
-      <span class="masthead__compact-location screen-only">{{ page.location | escape }}</span>
+      <span class="masthead__compact-location screen-only"><span class="location__full">{{ page.location | escape }}</span><span class="location__short" aria-hidden="true">{{ page.location_short | escape }}</span></span>
       <a class="masthead__domain screen-only" href="{{ site.url | escape }}/">{{ site.url | remove: 'https://' | escape }}</a>
       <nav class="masthead__actions screen-only" aria-label="Quick links">
         {% include masthead-links.html compact=true %}
