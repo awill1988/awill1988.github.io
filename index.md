@@ -72,7 +72,7 @@ Built the Rust services that resolved permissions at token exchange, giving [onX
 - Four Vue apps gained progressive web app support by upgrading one Webpack dependency I built. [Vue CLI](https://github.com/vuejs/vue-cli/pull/6277) merged my Webpack 5 manifest fix.
 - Built deposit posting across the accounting app and backend, reconciling deposits with their journal entries.
 
-### <img class="employer-logo" alt="" src="{{ '/assets/employers/payouts.svg' | relative_url }}"> Payouts Network (formerly Wonder Technologies)
+### <img class="employer-logo" alt="" src="{{ '/assets/employers/payouts.svg' | relative_url }}"> [Payouts Network](https://payoutsnetwork.com/)
 {: #payouts-network-formerly-wonder-technologies tabindex="-1"}
 
 #### Solutions Architect <span class="dates">Sep 2020 – Oct 2020</span>
