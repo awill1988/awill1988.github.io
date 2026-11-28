@@ -140,10 +140,10 @@ I designed the AWS platform that credit unions used to issue card rebates and wr
 
 <div class="resume-section__body" markdown="1">
 
-[University of California, Irvine](https://uci.edu/){: .credit-link .credit-link--uci} · [BA in Drama](https://catalogue.uci.edu/clairetrevorschoolofthearts/departmentofdrama/drama_ba/), minor in Information & Computer Science, 2015.\
+[University of California, Irvine](https://uci.edu/){: .credit-link .credit-link--uci} · [BA in Drama](https://catalogue.uci.edu/clairetrevorschoolofthearts/departmentofdrama/drama_ba/), minor in Information & Computer Science, 2015.<br>
 [Saddleback College](https://www.saddleback.edu/){: .credit-link .credit-link--saddleback} · Associate of Arts, 2012.
 
-[Bozeman Symphonic Choir](https://www.bozemansymphony.org/choir){: .credit-link} · Volunteer member, 2022–present.\
+[Bozeman Symphonic Choir](https://www.bozemansymphony.org/choir){: .credit-link} · Volunteer member, 2022–present.<br>
 [Code2College](https://code2college.org/volunteers/){: .credit-link} · Volunteer tutoring instructor, 2022–2023.
 
 </div>
