@@ -93,6 +93,8 @@ def print_downloads(page, design, output, images):
     for edition, name in DOWNLOADS.items():
         page.locator("main").evaluate("(m, plain) => m.classList.toggle('resume--plain', plain)", edition == "plain")
         ready(page)
+        assert not page.locator(".work").is_visible(), "selected work must be screen-only"
+        assert page.locator("article :is(h2,h3,h4):visible").first.get_attribute("id") == "arro-finance"
         links = page.locator("main a:visible").evaluate_all("els => els.map(a => a.href)")
         path = output / name
         page.pdf(path=path, tagged=True, print_background=True, prefer_css_page_size=True)
@@ -134,6 +136,8 @@ def screen_checks(page, images):
             page.emulate_media(color_scheme=scheme)
             ready(page)
             measure(page)
+            last_highlight = page.locator(".work__row p").last.bounding_box()
+            assert last_highlight["y"] + last_highlight["height"] <= height, f"{device}: final highlight below fold"
             for view, selector in (("top", "body"), ("onx", "#onxmaps"),
                                    ("payouts", "#payouts-network-formerly-wonder-technologies"),
                                    ("end", "article > :last-child")):
@@ -149,6 +153,12 @@ def screen_checks(page, images):
     page.locator(".skip").focus()
     page.keyboard.press("Enter")
     assert page.locator("#experience").evaluate("e => e === document.activeElement")
+    targets = ["#arro-finance", "#onx-backcountry", "#onx-identity"]
+    for link, target in zip(page.locator(".work a").all(), targets, strict=True):
+        assert link.get_attribute("href") == target
+        link.focus()
+        page.keyboard.press("Enter")
+        assert page.locator(target).evaluate("e => e === document.activeElement && e.matches(':target')")
 
 
 def verify_downloads(page):
@@ -204,11 +214,11 @@ def proof_index():
     cards = []
     for design in DESIGNS:
         description = {"editorial": "Spectral name and employers · sans serif section labels",
-                       "engineering": "Source Sans 3 name and employers · monospace section labels"}[design]
+                       "engineering": "Source Sans 3 name and employers · monospace dates"}[design]
         samples = "".join(
             f'<figure><figcaption>{label}</figcaption><a href="{design}/{sample}.png">'
             f'<img alt="Full-size {design} {label.lower()}" src="{design}/{sample}.png"></a></figure>'
-            for sample, label in (("desktop-light-top", "Desktop"), ("phone-dark-onx", "Phone · onX"),
+            for sample, label in (("desktop-light-top", "Desktop"), ("phone-dark-top", "Phone"),
                                   ("desktop-light-payouts", "Desktop · Payouts"),
                                   ("styled-page-1", "Styled PDF · page one"), ("styled-page-2", "Styled PDF · page two"))
         )

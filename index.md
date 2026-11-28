@@ -4,13 +4,26 @@ full_name: Adam Williams
 title: Staff Software Engineer
 location: Bozeman, Montana
 intro: I’m a staff software engineer focused on security, compliance, and site reliability. At Arro Finance, I build banking services and operate the infrastructure behind them. At onX, I helped run the identity systems that gave subscribers access to the maps they paid for, across a platform used by millions of adventurers.
+highlights:
+  - employer: Arro Finance
+    target: arro-finance
+    title: Monitoring credit payments at Arro
+    detail: I replaced Datadog with a self-hosted monitoring stack. Engineers could see payment-provider health and get alerts when workflows stalled or monitoring went silent.
+  - employer: onX Backcountry
+    target: onx-backcountry
+    title: Putting mountain snowpack history on the map
+    detail: I built the service that let Backcountry skiers look up snowpack history at more than 800 stations. It also supplied snow observations to Hunt and Offroad.
+  - employer: onX Identity
+    target: onx-identity
+    title: Giving onX engineers a terminal sign-in
+    detail: I built an OAuth command-line tool that dozens of engineers used daily to sign in from their terminals.
 ---
 
 ## Professional experience
 {: #experience tabindex="-1"}
 
 ### <img class="employer-logo" alt="" src="{{ '/assets/employers/arro.png' | relative_url }}"> Arro Finance
-{: #arro-finance}
+{: #arro-finance tabindex="-1"}
 
 #### Staff Software Engineer <span class="dates">Jan 2026 – present</span>
 
@@ -25,6 +38,7 @@ intro: I’m a staff software engineer focused on security, compliance, and site
 {: #onxmaps}
 
 #### Senior Software Engineer I, Core Services (Identity) <span class="dates">May 2023 – Dec 2025</span>
+{: #onx-identity tabindex="-1"}
 
 Built the access controls that let onX Fish subscribers use [one Midwest membership](https://www.onxmaps.com/blog/onx-officially-introduces-onx-fish) across Minnesota, Wisconsin and Michigan.
 
