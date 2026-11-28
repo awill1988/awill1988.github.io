@@ -323,16 +323,8 @@ article ul { padding-inline-start: 1.15em; }
   .skip:focus { position: fixed; z-index: 3; }
 }
 @media screen and (max-width: 40rem) {
-  html { scroll-padding-block-start: 4.75rem; }
-  .masthead-slot { --bar-height: 4.25rem; --name-lift: 1.24rem; }
-  [data-ready] .masthead__actions, [data-ready] .masthead__domain {
-    inset-block: auto 0;
-    min-height: 44px;
-  }
-  [data-ready] .masthead__domain {
-    inset-inline: calc((100% - var(--content-width)) / 2) auto;
-    font-size: clamp(.60rem, 3.2vw, .65rem);
-  }
+  [data-ready] .masthead__domain,
+  .masthead__actions .masthead__action:not(.masthead__action--linkedin) { display: none; }
 }
 @media screen and (min-width: 47rem) {
   .masthead-slot { --scroll-range: 320; }

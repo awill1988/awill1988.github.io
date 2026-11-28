@@ -136,9 +136,15 @@ def screen_checks(page, images):
         place = page.locator(".masthead__compact-location").bounding_box()
         assert place["x"] >= name["x"] + name["width"], f"{width}: location overlaps name"
         assert name["y"] <= place["y"] + place["height"] / 2 <= name["y"] + name["height"]
-        compact = page.get_by_role("navigation", name="Profile links and résumé download")
-        for label in ("GitHub profile", "LinkedIn profile", "Download styled résumé PDF"):
-            assert compact.get_by_role("link", name=label, exact=True).is_visible()
+        compact = page.get_by_role("navigation", name="Quick links")
+        linkedin = compact.get_by_role("link", name="LinkedIn profile").bounding_box()
+        assert linkedin["x"] >= place["x"] + place["width"], f"{width}: location overlaps LinkedIn"
+        if width <= 640:
+            assert compact.get_by_role("link").count() == 1
+            assert page.locator(".masthead__domain").is_hidden()
+        else:
+            for label in ("GitHub profile", "Download styled résumé PDF"):
+                assert compact.get_by_role("link", name=label, exact=True).is_visible()
         page.evaluate("scrollTo(0,0)")
     for device, (width, height) in SIZES.items():
         page.set_viewport_size({"width": width, "height": height})
