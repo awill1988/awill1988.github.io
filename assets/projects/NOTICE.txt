@@ -1,0 +1,11 @@
+Project marks identify their respective projects and organizations.
+The small PNGs are derived from these first-party assets:
+
+Savior     https://savior.yourmood.ai/savior.svg
+Vue CLI    https://cli.vuejs.org/favicon.png
+GDAL       https://gdal.org/en/stable/_static/gdalicon.png
+Ory        https://www.ory.sh/docs/img/favico.png
+Wazuh      https://documentation.wazuh.com/current/_static/images/favicon.ico
+Vuetify    https://vuetifyjs.com/favicon.ico
+UC Irvine  https://catalogue.uci.edu/favicon.ico
+Saddleback College  https://www.saddleback.edu/themes/custom/saddleback_theme/assets/favicon/favicon.png
