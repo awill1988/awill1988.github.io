@@ -3,34 +3,26 @@ layout: default
 ---
 <a class="skip" href="#experience">Skip to experience</a>
 <main class="resume resume--{{ site.resume_typography }}">
-  <header class="masthead">
-    <h1>{{ page.full_name }}</h1>
-    <p class="masthead__bio">{{ page.intro | escape }}</p>
-    <nav class="masthead__links" aria-label="Résumé and contact">
-      <span class="masthead__group">
-        <a class="screen-only" href="#experience">Experience</a>
-        <a href="{{ site.profiles.github | escape }}"><span class="screen-only">GitHub</span><span class="print-only">github.com/awill1988</span></a>
-        <a href="{{ site.profiles.linkedin | escape }}"><span class="screen-only">LinkedIn</span><span class="print-only">linkedin.com/in/adam1988</span></a>
-      </span>
-      <span class="masthead__group screen-only">
-        <a class="screen-only" href="{{ '/assets/Adam-Williams-Resume.pdf' | relative_url }}" download>Download PDF</a>
-        <a class="screen-only" href="{{ '/assets/Adam-Williams-Resume-Plain.pdf' | relative_url }}" download>Plain PDF</a>
-      </span>
-    </nav>
-  </header>
-  <section class="work screen-only" aria-labelledby="selected-work">
-    <h2 id="selected-work">Selected work</h2>
-    <ul class="work__list">
-      {% for item in page.highlights %}
-      <li class="work__row">
-        <span class="work__employer">{{ item.employer | escape }}</span>
-        <div>
-          <h3><a href="#{{ item.target }}">{{ item.title | escape }}</a></h3>
-          <p>{{ item.detail | escape }}</p>
+  <div class="masthead-slot">
+    <header class="masthead">
+      <div class="masthead__content">
+        <div class="masthead__identity">
+          <h1><a class="screen-only" href="#top" aria-label="{{ page.full_name | escape }}, back to top">{{ page.full_name | escape }}</a><span class="print-only">{{ page.full_name | escape }}</span></h1>
+          <p class="masthead__byline">{{ page.title | escape }} · <span class="masthead__location">{{ page.location | escape }}</span></p>
         </div>
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
+        <p class="masthead__bio">{{ page.intro | escape }}</p>
+        <nav class="masthead__links" aria-label="Résumé and contact">
+          <a class="screen-only" href="#experience">Experience</a>
+          {% include masthead-links.html %}
+        </nav>
+      </div>
+      <span class="masthead__compact-location screen-only">{{ page.location | escape }}</span>
+      <a class="masthead__domain screen-only" href="{{ site.url | escape }}/">{{ site.url | remove: 'https://' | escape }}</a>
+      <nav class="masthead__actions screen-only" aria-label="Quick links">
+        {% include masthead-links.html compact=true %}
+      </nav>
+    </header>
+  </div>
   <article aria-label="Professional résumé">{{ content }}</article>
 </main>
+<script defer src="{{ '/assets/masthead.js' | relative_url }}"></script>

@@ -126,26 +126,47 @@ def measure(page):
 
 
 def screen_checks(page, images):
-    for width in (320, 575, 576, 577):
+    for width in (320, 575, 576, 577, 640, 641, 928):
         page.set_viewport_size({"width": width, "height": 844})
         ready(page)
         measure(page)
+        page.locator("#onx-identity").evaluate("e => e.scrollIntoView()")
+        ready(page)
+        name = page.locator("h1 a").bounding_box()
+        place = page.locator(".masthead__compact-location").bounding_box()
+        assert place["x"] >= name["x"] + name["width"], f"{width}: location overlaps name"
+        assert name["y"] <= place["y"] + place["height"] / 2 <= name["y"] + name["height"]
+        compact = page.get_by_role("navigation", name="Quick links")
+        linkedin = compact.get_by_role("link", name="LinkedIn profile").bounding_box()
+        assert linkedin["x"] >= place["x"] + place["width"], f"{width}: location overlaps LinkedIn"
+        if width <= 640:
+            assert compact.get_by_role("link").count() == 1
+            assert page.locator(".masthead__domain").is_hidden()
+        else:
+            for label in ("GitHub profile", "Download styled résumé PDF"):
+                assert compact.get_by_role("link", name=label, exact=True).is_visible()
+        page.evaluate("scrollTo(0,0)")
     for device, (width, height) in SIZES.items():
         page.set_viewport_size({"width": width, "height": height})
         for scheme in ("light", "dark"):
             page.emulate_media(color_scheme=scheme)
             ready(page)
             measure(page)
-            last_highlight = page.locator(".work__row p").last.bounding_box()
+            last_highlight = page.locator(".work__link").last.bounding_box()
             assert last_highlight["y"] + last_highlight["height"] <= height, f"{device}: final highlight below fold"
+            if device == "desktop":
+                role = page.locator("#arro-finance + h4").bounding_box()
+                assert role["y"] + role["height"] <= height, "current role below fold"
             for view, selector in (("top", "body"), ("onx", "#onxmaps"),
                                    ("payouts", "#payouts-network-formerly-wonder-technologies"),
                                    ("end", "article > :last-child")):
                 page.locator(selector).evaluate("e => e.scrollIntoView({block:'start',behavior:'instant'})")
                 page.evaluate("() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)))")
+                page.wait_for_function("!document.querySelector('.masthead--glint')")
                 page.screenshot(path=images / f"{device}-{scheme}-{view}.png", scale="css")
     page.evaluate("scrollTo(0,0)")
-    for target in page.locator("a:visible").all():
+    ready(page)
+    for target in page.locator("a:visible").element_handles():
         page.keyboard.press("Tab")
         assert target.evaluate("""a => a === document.activeElement && a.matches(':focus-visible')
           && getComputedStyle(a).outlineStyle !== 'none'"""), target.inner_text()
@@ -162,7 +183,13 @@ def screen_checks(page, images):
 
 
 def verify_downloads(page):
-    for anchor, name in zip(page.locator("nav [download]").all(), DOWNLOADS.values(), strict=True):
+    page.evaluate("scrollTo(0,0)")
+    ready(page)
+    nav = page.get_by_role("navigation", name="Résumé and contact")
+    for label in ("GitHub profile", "LinkedIn profile", "Download styled résumé PDF", "Download plain résumé PDF"):
+        link = nav.get_by_role("link", name=label, exact=True)
+        assert link.is_visible() and link.locator('svg[aria-hidden="true"]').count() == 1
+    for anchor, name in zip(page.locator(".masthead__links [download]").all(), DOWNLOADS.values(), strict=True):
         with page.expect_download() as event:
             anchor.click()
         download = event.value
