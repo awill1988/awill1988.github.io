@@ -225,7 +225,7 @@ article ul { padding-inline-start: 1.15em; }
   }
 }
 
-.masthead__compact-location, .masthead__domain, .masthead__actions { display: none; }
+.location__short, .masthead__compact-location, .masthead__domain, .masthead__actions { display: none; }
 .masthead h1 a { text-decoration: none; }
 @media screen {
   html { scroll-padding-block-start: 3.5rem; }
@@ -324,7 +324,7 @@ article ul { padding-inline-start: 1.15em; }
 }
 @media screen and (max-width: 40rem) {
   [data-ready] .masthead__domain,
-  .masthead__actions .masthead__action:not(.masthead__action--linkedin) { display: none; }
+  .masthead__actions .masthead__action[download] { display: none; }
 }
 @media screen and (min-width: 47rem) {
   .masthead-slot { --scroll-range: 320; }
@@ -406,6 +406,12 @@ article ul { padding-inline-start: 1.15em; }
   }
   .credit-link--uci { --project-mark: url("projects/uci.png"); }
   .credit-link--saddleback { --project-mark: url("projects/saddleback.png"); }
+  .credit-link.credit-link--uci::before { width: 1.2em; height: 1.2em; vertical-align: -.22em; }
+  .credit-link.credit-link--saddleback::before {
+    width: 1.45em;
+    background-color: #fff8f3;
+    border-radius: .15em;
+  }
   .credit-link--savior { --project-mark: url("projects/savior.png"); }
   .credit-link--vue-cli { --project-mark: url("projects/vue-cli.png"); }
   .credit-link--gdal { --project-mark: url("projects/gdal.png"); }
@@ -415,5 +421,14 @@ article ul { padding-inline-start: 1.15em; }
 }
 
 @media screen and (max-width: 23rem) {
+  [data-ready] .masthead__actions { inset-inline-end: max(.25rem, env(safe-area-inset-right)); }
   [data-ready] .masthead__compact-location { font-size: .70rem; }
+  .location__short { display: inline; }
+  .location__full {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
 }
