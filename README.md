@@ -1,6 +1,6 @@
 # Adam Williams
 
-I’m a staff software engineer in Bozeman, Montana. At Arro Finance, I build banking services and an AI assistant. As the founding backend engineer for onX Backcountry, I built the SNOTEL service that brings mountain snowpack histories to onX Hunt, Backcountry and Offroad.
+I’m a staff software engineer in Bozeman, Montana. At Arro Finance, I build banking services and run the monitoring platform engineers use to investigate payment failures. I led engineering’s work on Arro’s SOC 2 Type II audit. At onX Backcountry, I built the service that lets skiers check mountain snowpack history on the map.
 
 [Read the résumé](index.md) · [LinkedIn](https://www.linkedin.com/in/adam1988/)
 
