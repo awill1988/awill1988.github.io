@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% capture title %}{{ site.title }} · {{ page.title }}{% endcapture %}
   {% assign description = page.intro | default: page.description %}
+  {% assign canonical = page.url | absolute_url %}
   <title>{{ title | escape }}</title>
+  <link rel="canonical" href="{{ canonical | escape }}">
   <meta name="description" content="{{ description | escape }}">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ title | escape }}">
   <meta property="og:description" content="{{ description | escape }}">
-  <meta property="og:url" content="{{ page.url | absolute_url | escape }}">
+  <meta property="og:url" content="{{ canonical | escape }}">
   <meta property="og:image" content="{{ '/assets/adam-williams-share.png' | absolute_url | escape }}">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
@@ -18,6 +20,24 @@
   <meta property="og:image:alt" content="Adam Williams’s black signature on a white background">
   <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="16x16 32x32 48x48" type="image/x-icon">
   <link rel="stylesheet" href="{{ '/assets/resume.css' | relative_url }}">
+  {% if page.layout == 'resume' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "url": {{ canonical | jsonify }},
+    "name": {{ title | jsonify }},
+    "mainEntity": {
+      "@type": "Person",
+      "@id": {{ canonical | append: '#person' | jsonify }},
+      "name": {{ page.full_name | jsonify }},
+      "jobTitle": {{ page.title | jsonify }},
+      "url": {{ canonical | jsonify }},
+      "sameAs": [{{ site.profiles.github | jsonify }}, {{ site.profiles.linkedin | jsonify }}]
+    }
+  }
+  </script>
+  {% endif %}
 </head>
 <body>
   {{ content }}

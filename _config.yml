@@ -1,6 +1,9 @@
 resume_typography: engineering
 title: Adam Williams
 url: https://adam.williams.engineer
+profiles:
+  github: https://github.com/awill1988
+  linkedin: https://www.linkedin.com/in/adam1988/
 markdown: kramdown
 exclude:
   - README.md

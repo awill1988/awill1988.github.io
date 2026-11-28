@@ -1,0 +1,21 @@
+- company: Montana TheatreWorks
+  productions:
+    - title: White Christmas
+      role: Ensemble
+      status: in rehearsal for December
+      year: 2026
+      url: https://bozemanmagazine.com/events/2026/12/05/213399-musical-irving-berlins-white-christmas
+    - title: The Music Man
+      role: Chorus
+      year: 2026
+      url: https://bozone.com/classic-broadway-musical-hits-ellen-stage/
+    - title: Cabaret
+      role: Ernst Ludwig
+      year: 2025
+      url: https://www.bozemantheater.com/shows/the-ellen-theatre/cabaret
+- company: Shane Lalani Center for the Arts
+  productions:
+    - title: RENT
+      role: Benny
+      year: 2026
+      url: https://www.theshanecenter.org/latest-news/meetthecastandcrewofrent-f6t9h
