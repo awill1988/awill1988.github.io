@@ -226,13 +226,14 @@ article ul { padding-inline-start: 1.15em; }
 }
 
 .location__short, .masthead__compact-location, .masthead__domain, .masthead__actions { display: none; }
-.masthead h1 a { text-decoration: none; }
+.masthead h1 a { text-decoration: none; white-space: nowrap; }
 @media screen {
   html { scroll-padding-block-start: 3.5rem; }
   /* These early destinations can land while the masthead is still contracting. */
   article :is(#experience, #arro-finance) { scroll-margin-block-start: max(1.25rem, calc(var(--open-height, 0px) - 3rem)); }
   .masthead-slot {
     --bar-height: 3rem;
+    --compact-name-ratio: 1.1;
     --name-lift: 0rem;
     --head-padding: clamp(1.25rem, 3vw, 2.25rem);
     --scroll-range: 240;
@@ -331,7 +332,10 @@ article ul { padding-inline-start: 1.15em; }
   .masthead__content { display: grid; grid-template-columns: 1fr 1.05fr; gap: .4rem 2.5rem; align-items: start; }
 }
 @media screen and (min-width: 58rem) {
-  .masthead-slot { --scroll-range: 400; }
+  html { scroll-padding-block-start: 4.5rem; }
+  .masthead-slot { --scroll-range: 400; --bar-height: 4rem; --compact-name-ratio: 1.32; }
+  [data-ready] .masthead__compact-location { font-size: .86rem; }
+  .masthead__actions svg { width: 1.16rem; height: 1.16rem; }
 }
 /* The intro fades linearly through 30%, crossing half opacity at 15%. */
 @keyframes widen-masthead {
@@ -351,7 +355,7 @@ article ul { padding-inline-start: 1.15em; }
 }
 @keyframes reduce-name {
   from { transform: translateY(0) scale(1); animation-timing-function: cubic-bezier(.48,.04,.19,1); }
-  82%, 100% { transform: translateY(calc((var(--bar-height) - 1.1rem) / 2 - var(--head-padding) - var(--name-lift, 0rem))) scale(var(--compact-scale)); }
+  82%, 100% { transform: translateY(calc((var(--bar-height) - var(--compact-name-ratio) * 1rem) / 2 - var(--head-padding) - var(--name-lift, 0rem))) scale(var(--compact-scale)); }
 }
 @keyframes hide-intro {
   0% { opacity: 1; visibility: visible; }
